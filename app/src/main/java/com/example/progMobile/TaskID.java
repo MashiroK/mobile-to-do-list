@@ -80,8 +80,24 @@ public class TaskID extends AppCompatActivity {
 
     @Override //not working for delete bttn remove???
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        MenuItem deleteMenu = menu.add(Menu.NONE, id1, 1, "Delete DB");
-        MenuItem leaveMenu = menu.add(Menu.NONE, id2, 2, "Cancel Operation");
+        MenuItem deleteMenu = menu.add(Menu.NONE, id1, 1, "Deletar Atividade");
+        //MenuItem leaveMenu = menu.add(Menu.NONE, id2, 2, "Cancelar");
+        deleteMenu.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+        public boolean onMenuItemClick(MenuItem menuItem) {
+            long ret;
+            db = new DBToDoHelper(TaskID.this);
+            ret = db.deleteTask(task);
+            db.close();
+            if (ret == -1) {
+                alert("Erro");
+            } else {
+                alert("Atividade deletada!");
+            }
+            fill();
+            return false;
+        }
+    });
         super.onCreateContextMenu(menu, v, menuInfo);
 
     }

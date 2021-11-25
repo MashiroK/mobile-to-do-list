@@ -118,6 +118,22 @@ public class DBToDoHelper extends SQLiteOpenHelper {
         return returnDB;
     }
 
+    public long deleteUser(User u) {
+        long returnDB;
+        db = this.getWritableDatabase();
+        String[] args = {String.valueOf(u.getIdUser())};
+        returnDB = db.delete(TABLE_NAME_USER, USER_COLUM_ID + "=?", args);
+        return returnDB;
+    }
+
+    public long deleteTask(Tasks t) {
+        long returnDB;
+        db = this.getWritableDatabase();
+        String[] args = {String.valueOf(t.getTaskID())};
+        returnDB = db.delete(TABLE_NAME_TASK, TASK_COLUM_ID + "=?", args);
+        return returnDB;
+    }
+
     public long updateTask(Tasks t) {
         long returnDB;
         this.db = getWritableDatabase();
