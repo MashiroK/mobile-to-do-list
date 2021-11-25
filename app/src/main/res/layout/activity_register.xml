@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/basic"
+    android:paddingLeft="15dp"
+    android:paddingTop="40dp"
+    android:paddingRight="15dp"
+    tools:context=".Register">
+
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="301dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="44dp"
+        android:ems="10"
+        android:hint="Nome:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/edtPhone"
+        app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtEmail"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtPhone"
+        android:layout_width="301dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Telefone:"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/edtPasswordRegister"
+        app:layout_constraintEnd_toEndOf="@+id/edtPasswordRegister"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtPasswordRegister"
+        app:layout_constraintTop_toBottomOf="@+id/edtName" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="301dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="1dp"
+        android:ems="10"
+        android:hint="Email:"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/edtPhone"
+        app:layout_constraintEnd_toEndOf="@+id/edtPhone"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edtPhone" />
+
+    <EditText
+        android:id="@+id/edtPasswordRegister"
+        android:layout_width="301dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginRight="26dp"
+        android:ems="10"
+        android:hint="Senha:"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
+
+    <Button
+        android:id="@+id/bttnCadastrar"
+        android:layout_width="253dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="112dp"
+        android:background="@drawable/button"
+        android:baselineAligned="false"
+        android:hint="Confirmar"
+        android:textColorHint="@color/white"
+        app:backgroundTint="#e17572"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPasswordRegister" />
+
+    <Button
+        android:id="@+id/bttnVoltar"
+        android:layout_width="161dp"
+        android:layout_height="36dp"
+        android:background="@drawable/button"
+        android:baselineAligned="false"
+        android:hint="Voltar ao Menu"
+        android:onClick="returnApp"
+        android:textColorHint="@color/white"
+        app:backgroundTint="#e17572"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
